@@ -10,7 +10,7 @@ function App() {
     <>
       <Navbar keywords={keywords} setKeywords={setKeywords} />
 
-      <ArticlePage keywords={keywords} />
+      <ArticlePage keywords={keywords} setKeywords={setKeywords}/>
     </>
   );
 }

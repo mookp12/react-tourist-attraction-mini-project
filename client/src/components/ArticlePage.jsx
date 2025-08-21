@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "lucide-react";
 
-const ArticlePage = ({ keywords }) => {
+const ArticlePage = ({ keywords, setKeywords }) => {
   const [articles, setArticles] = useState([]);
 
   const fetchArticles = async () => {
@@ -20,6 +20,10 @@ const ArticlePage = ({ keywords }) => {
   useEffect(() => {
     fetchArticles();
   }, [keywords]);
+
+  const handleTagClick = (tag) => {
+    setKeywords(tag);
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -51,7 +55,10 @@ const ArticlePage = ({ keywords }) => {
                     {article.tags.length - 1 === index && (
                       <span className="text-gray-500 text-sm">และ </span>
                     )}
-                    <span className="text-blue-500 underline cursor-pointer text-sm mr-2">
+                    <span 
+                      className="text-blue-500 underline cursor-pointer text-sm mr-2"
+                      onClick={() => handleTagClick(tag)}
+                    >
                       {tag}
                     </span>
                   </span>
