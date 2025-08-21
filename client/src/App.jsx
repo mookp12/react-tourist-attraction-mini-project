@@ -14,6 +14,7 @@ const [keywords, setKeywords] = useState("");
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl font-bold text-blue-500 text-center mb-8">เที่ยวไหนดี</h1>
           <div className="max-w-2xl mx-auto">
+            <p>ค้นหาที่เที่ยว</p>
             <input
               type="text"
               placeholder="หาที่เที่ยวแล้วไปกัน ..."
@@ -26,11 +27,11 @@ const [keywords, setKeywords] = useState("");
       </header>
 
       
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      
         
         <ArticlePage keywords={keywords}/>
 
-      </main>
+   
     </div>
   );
 }
