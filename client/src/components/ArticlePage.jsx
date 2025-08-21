@@ -2,9 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "lucide-react";
 
-const ArticlePage = (props) => {
+const ArticlePage = ({ keywords }) => {
   const [articles, setArticles] = useState([]);
-  const keywords = props.keywords;
 
   const fetchArticles = async () => {
     try {
@@ -48,14 +47,14 @@ const ArticlePage = (props) => {
               <div className="mb-4">
                 <span className="text-gray-500 text-sm">หมวด </span>
                 {article.tags.map((tag, index) => (
-                  <>
+                  <span key={index}>
                     {article.tags.length - 1 === index && (
                       <span className="text-gray-500 text-sm">และ </span>
                     )}
                     <span className="text-blue-500 underline cursor-pointer text-sm mr-2">
                       {tag}
                     </span>
-                  </>
+                  </span>
                 ))}
               </div>
               <div className="flex justify-between items-center">
@@ -78,7 +77,7 @@ const ArticlePage = (props) => {
                   rel="noopener noreferrer"
                   className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors inline-flex items-center justify-center"
                 >
-                  <Link />
+                  <Link className="w-5 h-5 text-gray-600" />
                 </a>
               </div>
             </div>

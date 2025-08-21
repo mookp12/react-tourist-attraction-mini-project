@@ -1,0 +1,9 @@
+/* Prevent UI flickering by always showing scrollbar space */
+html {
+  overflow-y: scroll;
+}
+
+/* Alternative: Use overlay scrollbars for smoother experience */
+* {
+  scrollbar-gutter: stable;
+}
